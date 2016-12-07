@@ -1,50 +1,108 @@
 <!DOCTYPE html>
 
 <head>
+ <link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
 <style>
-  div {
-    height: 150px;
-    width: 300px;
-    margin: 0 auto;
+
+.beep{
+  width: 5px;
+  height: 0px;
+  border: 5px solid transparent;
+  border-top: 10px solid #777;
+  border-bottom: 80px solid #888;
+  left: 140px;
+  position: relative;
+}
+@keyframes blink {
+  50% {
+    background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
   }
-  .foot {
-    height: 40px;
-    width: 40px;
-    background:#ccc;
-    border-radius: 40px;
-    border: 15px solid #999; 
+}
+@-webkit-keyframes blink {
+  50% {
+    background: -webkit-radial-gradient(circle, red 15%, transparent 40%), #cc5;
   }
-  .torso {
-    height: 0;
-    width: 140px;
-    border-top:300px solid #bc6;
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
-    border-radius: 20px 20px 100px 100px;
+}
+@-moz-keyframes blink {
+  50% {
+    background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
   }
-  .brain {
-    background: radial-gradient(circle, white 15%, transparent 40%) #cc5;
-    background: -webkit-radial-gradient
-    -moz-radial-gradient;
-    background-size: 75px 150px;
-    height: 150px;
-    width: 150px;
-    border-radius: 60px 60px 10px 10px;
-    border-bottom: 40px double #666;
-  }
-  .beep {
-    width: 5px;
-    height: 0;
-    border: 5px solid transparent;    
-    border-bottom: 80px solid #888;    
-    border-top: 10px solid #777;
-  }
+}
+.brain {
+  animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
+  background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
+  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5; 
+  background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+  background-size: 75px 150px;
+  height: 150px;
+  width: 150px;
+  border-radius: 60px 60px 10px 10px;
+  border-bottom: 40px solid #666;
+  position: relative;
+  left: 70px;
+}
+.torso {
+  height: 0;
+  width: 140px;
+  border-top: 300px solid #bc6;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-radius: 20px 20px 100px 100px;
+}
+.foot {
+  height: 40px;
+  width: 40px;
+  background: #ccc;
+  border-radius: 40px;
+  border: 15px solid #999;
+  left: 110px;
+  position: relative;
+  top:-10px;
+  z-index: -1;
+}
+.robot {
+  position: relative;
+  left: 200px;
+}
+.left {
+  font-family: 'Poller One', Verdana, Arial, Sans-Serif;
+  color: #666;
+  font-weight: bold;
+  font-size: 250px;
+  transform: rotate(200deg);
+  -webkit-transform: rotate(200deg);
+  -moz-transform:rotate(200deg);
+  left: -190px;
+  top: -320px;
+  position: relative;
+  z-index: -1;
+}
+.right {
+  font-family: 'Poller One', Verdana, Arial, Sans-Serif;
+  color: #666;
+  font-weight: bold;
+  font-size: 250px;
+  transform: scaleY(-1) rotate(20deg);
+  -webkit-transform: scaleY(-1) rotate(20deg);
+  -moz-transform: scaleY(-1) rotate(20deg);
+  top: -620px;
+  left: 190px;
+  z-index: -1;
+  position: relative;
+}
 </style>
 </head>
 
 <body>
-  <div class="beep"></div>
-  <div class="brain"></div>
-  <div class="torso"></div>
-  <div class="foot"></div>
+  <div class="robot">
+    <div class="beep"></div>
+    <div class="brain"></div>
+    <div class="torso">
+      <div class="left">j</div>
+      <div class="right">j</div>
+    </div>
+    <div class="foot"></div>
+  </div>
 </body>
