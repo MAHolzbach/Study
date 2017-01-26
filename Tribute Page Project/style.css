@@ -1,28 +1,32 @@
 body {
   background-color: tan;
 }
+#picAndText {
+  background-color: white;
+  margin: 50px 50px 50px 50px;
+  border: black solid 5px;
+}
 #mainImage {
-  display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 75%;
   z-index: -1;
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
+  border: deepskyblue solid 5px;
 }
 h1 {
   text-align: center;
 }
 h3 {
   text-align: center;
-  color: white;
+  color: black;
 }
 .mainText{
-  margin-top: 150px;
+  margin-top: 25px;
 }
 p {
   display: block;
@@ -30,10 +34,11 @@ p {
   max-width: 70%;
   margin-left: auto;
   margin-right: auto;
-  color: white;
+  color: black;
   font-size: 17px;
 }
 #footer {
   text-align: center;
-  color: white;
+  color: black;
+  font-weight: bold;
 }
