@@ -1,9 +1,11 @@
 $("#riverInfoButton").click(function() {
-  $(".thumbnail").animate({
-    opacity: 0
-  }, 1000, function() {
-    $("#riverInfo").animate({
-      opacity: 1
-    }, 1000);
+  $(".thumbnail").hide("drop", {direction: "down"}, 500, function() {
+    $("#riverInfo").show("fade", 500);
+  });
+});
+
+$("#riverInfo").click(function() {
+  $(this).hide("fade", 500, function() {
+    $(".thumbnail").show("fade", 500);
   });
 });
