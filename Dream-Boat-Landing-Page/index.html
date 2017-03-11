@@ -32,7 +32,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#about">About</a></li>
+            <li><a type="button" data-toggle="modal" data-target="#about-us">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -50,7 +50,8 @@
               <div class="caption">
                 <h2>Chicago River</h2>
                 <h4>2 hours/$25</h4>
-                <p><a href="#" class="btn btn-primary" role="button">Book</a> <a href="#" class="btn btn-default" role="button">Info</a></p>
+                <button type="button" class="btn btn-primary" role="button">Book</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#river-info">Info</button>
               </div>
             </div>
           </div>
@@ -59,20 +60,74 @@
               <div class="caption">
                 <h2>Lake Michigan</h2>
                 <h4>4 hours/$50</h4>
-                <p><a href="#" class="btn btn-primary" role="button">Book</a> <a href="#" class="btn btn-default" role="button">Info</a></p>
+                <button type="button" class="btn btn-primary" role="button">Book</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#lake-info">Info</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="modal fade" id="river-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>The Chicago River Tour</h3>
+              </div>
+              <div class="modal-body">
+                <img class="img-responsive"src="http://i.imgur.com/Dbq62AI.jpg">
+                <p>See a side of Chicago you never imagined! Float through a breathtaking canyon of glass and steel!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Book now!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="lake-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>The Lake Michigan Tour</h3>
+              </div>
+              <div class="modal-body">
+                <img class="img-responsive"src="http://i.imgur.com/p5sf0c3.jpg">
+                <p>See the Chicago skyline in its entirety while enjoying a relaxing afternoon on the lake!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Book now!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="about-us" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>Our Story...</h3>
+              </div>
+              <div class="modal-body">
+                <img class="img-responsive"src="http://i.imgur.com/d1BcjHC.png">
+                <p>After many years of dedicated service to the Galactic Empire, your captain, Grand Admiral Thrawn, decided it was time to retire. Unwilling to let go of the captain's chair, he decided to start a tour company in his favorite city: Chicago!<p/>
+                <p>He has been sailing the waterways of the Windy City for over 3 years, and while it's no Star Destroyer, he's pretty stoked about the whole thing.</p>
+                <p>Now you can take advantage of Admiral Thrawn's sailing expertise and have an experience you will remember for years to come!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
     </div><!-- /.container -->
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
