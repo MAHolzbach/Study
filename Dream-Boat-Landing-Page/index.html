@@ -52,7 +52,7 @@
               <div class="caption">
                 <h2>Chicago River</h2>
                 <h4>2 hours/$25</h4>
-                <button type="button" class="btn btn-primary" role="button">Book</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info">Book</button>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#river-info">Info</button>
               </div>
             </div>
@@ -62,7 +62,7 @@
               <div class="caption">
                 <h2>Lake Michigan</h2>
                 <h4>4 hours/$50</h4>
-                <button type="button" class="btn btn-primary" role="button">Book</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info">Book</button>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#lake-info">Info</button>
               </div>
             </div>
@@ -81,7 +81,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Book now!</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info" data-dismiss="modal">Book</button>
               </div>
             </div>
           </div>
@@ -99,7 +99,98 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Book now!</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-info" data-dismiss="modal" id="bookingButton">Book</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="booking-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>Book your tour!</h3>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="select-tour">Select Tour</label>
+                    <select class="form-control" id="select-tour">
+                      <option>River Tour</option>
+                      <option>Lake Tour</option>
+                    </select>
+                  </div>
+                </form>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <label for="month">Date</label>
+                    <select class="form-control" id="month">
+                      <option>January</option>
+                      <option>February</option>
+                      <option>March</option>
+                      <option>April</option>
+                      <option>May</option>
+                      <option>June</option>
+                      <option>July</option>
+                      <option>August</option>
+                      <option>September</option>
+                      <option>October</option>
+                      <option>November</option>
+                      <option>December</option>
+                    </select>
+                    <select class="form-control" id="month">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                      <option>16</option>
+                      <option>17</option>
+                      <option>18</option>
+                      <option>19</option>
+                      <option>20</option>
+                      <option>21</option>
+                      <option>22</option>
+                      <option>23</option>
+                      <option>24</option>
+                      <option>25</option>
+                      <option>26</option>
+                      <option>27</option>
+                      <option>28</option>
+                      <option>29</option>
+                      <option>30</option>
+                      <option>31</option>
+                    </select>
+                    <label for="people">People</label>
+                    <select class="form-control" id="people">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                      <option>13</option>
+                      <option>14</option>
+                      <option>15</option>
+                    </select>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
