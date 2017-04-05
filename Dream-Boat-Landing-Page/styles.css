@@ -7,12 +7,12 @@ body {
   font-family: 'Crete Round', serif;
 }
 .splash h1 {
-  font-size: 60px;
+  font-size: 6em;
   font-weight: bold;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .lead {
-  font-size: 20px;
+  font-size: 2em;
   font-weight: bold;
 }
 .splash {
@@ -29,11 +29,19 @@ body {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
 }
+.navbar-inverse .navbar-brand:hover {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: black;
+}
 .nav.navbar-nav li a {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 18px;
+  font-size: 2em;
   color: white;
   cursor: pointer;
+}
+.nav.navbar-nav li a:hover {
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: black;
 }
 .thumbnail {
   background: none;
@@ -44,10 +52,18 @@ body {
   color: white;
 }
 .thumbnail .caption h2 {
+  font-size: 4em;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .thumbnail .caption h4 {
+  font-size: 2em;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.thumbnail button {
+  font-size: 1.5em;
+}
+.modal {
+  font-size: 1.20em;
 }
 #river-info img {
   border: black 1px solid;
@@ -62,3 +78,45 @@ body {
 }
 #about-us p {
   text-align: left;
+}
+.ui-widget {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+.ui-widget.ui-widget-content {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(197, 197, 197);
+    border-image: initial;
+}
+.ui-widget-header {
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+    background: rgb(233, 233, 233);
+}
+.ui-datepicker {
+    width: 17em;
+    display: none;
+    padding: 0.2em 0.2em 0px;
+}
+.ui-datepicker table {
+    width: 100%;
+    font-size: 0.9em;
+    border-collapse: collapse;
+    margin: 0px 0px 0.4em;
+}
+table {
+    display: table;
+    border-spacing: 2px;
+    border-color: grey;
+    background-color: white;
+}
+#bookingFooter {
+  margin-top: 25px;
+}
+.cancelButton {
+  margin-bottom: 25px;
+}

@@ -13,8 +13,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Crete+Round" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="styles.css">
   </head>
 
@@ -45,7 +43,7 @@
 
       <div class="splash">
         <h1>Dream Boat Water Tours</h1>
-        <p class="lead">See Chicago like you've never dreamed</p>
+        <p class="lead">See Chicago like you've never dreamed!</p>
         <div class="row">
           <div class="col-sm-6 col-md-6">
             <div class="thumbnail">
@@ -123,54 +121,8 @@
                 </form>
                 <form class="form-inline">
                   <div class="form-group">
-                    <label for="month">Date</label>
-                    <select class="form-control" id="month">
-                      <option>January</option>
-                      <option>February</option>
-                      <option>March</option>
-                      <option>April</option>
-                      <option>May</option>
-                      <option>June</option>
-                      <option>July</option>
-                      <option>August</option>
-                      <option>September</option>
-                      <option>October</option>
-                      <option>November</option>
-                      <option>December</option>
-                    </select>
-                    <select class="form-control" id="month">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                      <option>16</option>
-                      <option>17</option>
-                      <option>18</option>
-                      <option>19</option>
-                      <option>20</option>
-                      <option>21</option>
-                      <option>22</option>
-                      <option>23</option>
-                      <option>24</option>
-                      <option>25</option>
-                      <option>26</option>
-                      <option>27</option>
-                      <option>28</option>
-                      <option>29</option>
-                      <option>30</option>
-                      <option>31</option>
-                    </select>
+                    <label for="datepicker">Date:</label>
+                    <input type="text" id="datepicker" class="datpicker">
                     <label for="people">People</label>
                     <select class="form-control" id="people">
                       <option>1</option>
@@ -191,6 +143,10 @@
                     </select>
                   </div>
                 </form>
+                <div class="modal-footer" id="bookingFooter">
+                  <button type="button" class="btn btn-danger btn-large btn-block cancelButton" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary btn-lg btn-block bookItButton">Bon Voyage!</button>
+                </div>
               </div>
             </div>
           </div>
@@ -215,12 +171,10 @@
           </div>
         </div>
 
-
     </div><!-- /.container -->
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </body>
