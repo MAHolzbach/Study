@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+}
+
+.backgroundImg1, .backgroundImg2, .backgroundImg3 {
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.backgroundImg1 {
+  background-image: url("http://i.imgur.com/aydeeIS.jpg");
+}
+.backgroundImg2 {
+  background-image: url("http://i.imgur.com/2aBhjcR.jpg");
+}
+.backgroundImg3 {
+  background-image: url("http://i.imgur.com/0xL2Oxk.jpg");
+}
