@@ -19,8 +19,13 @@ body, html {
 .backgroundImg3 {
   background-image: url("http://i.imgur.com/0xL2Oxk.jpg");
 }
+.backgroundImg4 {
+  background-image: url("http://i.imgur.com/sB2iC8A.png");
+}
 .container.navbar-container {
   max-width: 660px;
+  padding-top: 10px;
+  opacity: 0.8;
 }
 .navbar .navbar-nav {
   display: inline-block;
@@ -30,9 +35,25 @@ body, html {
 .navbar .navbar-collapse {
   text-align: center;
 }
+#navLinks a {
+  color: black;
+}
 .homePage .row .col-md-2, .col-md-6 {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+.homePage {
+  min-height: 100vh;
 }
 .homePage img {
-  padding-top: 10px;
+  margin-top: 10px;
+  border: gold 3px solid;
+}
+.menuPage {
+  min-height: 100vh;
+}
+.menuPage img {
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: 3px black solid;
 }
