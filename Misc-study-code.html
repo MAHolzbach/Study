@@ -9,7 +9,7 @@
 <body>
 
     <p>...</p>
-    
+
 </body>
 
 <script>
@@ -21,25 +21,25 @@
 //            return (this.age * 5) + this.height;
 //        }
 //    }
-//        
+//
 //    var Mike = Object.create(player);
 //    Mike.name = 'Mike';
 //    Mike.age = 67;
 //    Mike.height = 60;
 //    Mike.score = player.score;
-//    
-//    
+//
+//
 //    var Peter = Object.create(player);
 //    Peter.name = 'Peter';
 //    Peter.age = 130;
 //    Peter.height = 56;
 //    Peter.score = player.score;
-//    
-//    
+//
+//
 //    var winner = function(player1, player2) {
 //        var player1score = player1.score();
 //        var player2score = player2.score();
-//        
+//
 //        if(player1score > player2score) {
 //            console.log(player1.name + ' wins with a score of ' + player1score);
 //        } else {
@@ -49,17 +49,17 @@
 //
 //    winner(Mike, Peter);
 //    winner(Peter, Mike);
-    
+
 //    var birthYears = [1970, 1950, 1980, 1924, 2001, 2005];
-    
+
 //    var ages = [];
-//    
+//
 //    var canServe = [];
-//    
+//
 //    for(i = 0; i < birthYears.length; i++) {
 //        ages.push(2017 - birthYears[i]);
 //    };
-//    
+//
 //    for(i = 0; i < ages.length; i++) {
 //        if(ages[i] >= 18) {
 //            console.log('Person ' + i + ' is of age at ' + ages[i] + ' years of age.');
@@ -67,35 +67,293 @@
 //            console.log('Person ' + i + ' is NOT of age at ' + ages[i] + ' years of age.');
 //        }
 //    };
-    
-    var birthYears = [1970, 1950, 1980, 1924, 2001, 2005,1985, 1998, 2005];
-    
-    var serviceDecider = function(years){
-        
-        var ages = [];
-    
-        var canServe = [];
-        
-        var cantServe = [];
 
-        for(i = 0; i < birthYears.length; i++) {
-            ages.push(2017 - birthYears[i]);
-        };
+//    var birthYears = [1970, 1950, 1980, 1924, 2001, 2005,1985, 1998, 2005];
+//
+//    var serviceDecider = function(years){
+//
+//        var ages = [];
+//
+//        var canServe = [];
+//
+//        var cantServe = [];
+//
+//        for(i = 0; i < birthYears.length; i++) {
+//            ages.push(2017 - birthYears[i]);
+//        };
+//
+//        for(i = 0; i < ages.length; i++) {
+//            if(ages[i] >= 18) {
+//                console.log('Person ' + i + ' is of age at ' + ages[i] + ' years of age.');
+//                canServe.push('Person ' + i + ' ' + true);
+//            } else {
+//                console.log('Person ' + i + ' is NOT of age at ' + ages[i] + ' years of age.');
+//                cantServe.push('Person ' + i + ' ' + false);
+//            }
+//        };
+//        console.log(canServe);
+//        console.log(cantServe);
+//    };
+//
+//    serviceDecider();
 
-        for(i = 0; i < ages.length; i++) {
-            if(ages[i] >= 18) {
-                console.log('Person ' + i + ' is of age at ' + ages[i] + ' years of age.');
-                canServe.push('Person ' + i + ' ' + true);
+    /*
+GAME RULES:
+
+- The game has 2 players, playing in rounds
+- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
+- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
+- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
+- The first player to reach 100 points on GLOBAL score wins the game
+
+*/
+//
+//var scores, roundScore, activePlayer, gamePlaying;
+//
+//init();
+//
+//
+//document.querySelector('.btn-roll').addEventListener('click', function() {
+//    if(gamePlaying) {
+//        // 1. Random number
+//        var dice = Math.floor(Math.random() * 6) + 1;
+//        var dice2 = Math.floor(Math.random() * 6) + 1;
+//
+//        //2. Display the result
+//        var diceDOM = document.getElementById('dice-1');
+//        diceDOM.style.display = 'block';
+//        diceDOM.src = 'dice-' + dice + '.png';
+//
+//        var diceDOM2 = document.getElementById('dice-2');
+//        diceDOM2.style.display = 'block';
+//        diceDOM2.src = 'dice-' + dice2 + '.png';
+//
+//        //3. Update the round score IF the rolled number was NOT a 1
+//        if (dice !== 1 && dice2 !== 1) {
+//            //Add score
+//            roundScore += dice + dice2;
+//            document.querySelector('#current-' + activePlayer).textContent = roundScore;
+//        } else {
+//            nextPlayer();
+//        }
+//    }
+//});
+//
+//
+//document.querySelector('.btn-hold').addEventListener('click', function() {
+//    if (gamePlaying) {
+//        // Add CURRENT score to GLOBAL score
+//        scores[activePlayer] += roundScore;
+//
+//
+//        // Update the UI
+//        document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+//
+//        // Check if player won the game
+//        if (scores[activePlayer] >= document.getElementById('winScore').value) {
+//            document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+//            document.getElementById('dice-1').style.display = 'none';
+//    document.getElementById('dice-2').style.display = 'none';
+//            document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+//            document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+//            gamePlaying = false;
+//        } else {
+//            //Next player
+//            nextPlayer();
+//        }
+//    }
+//});
+//
+//
+//function nextPlayer() {
+//    //Next player
+//    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+//    roundScore = 0;
+//
+//    document.getElementById('current-0').textContent = '0';
+//    document.getElementById('current-1').textContent = '0';
+//
+//    document.querySelector('.player-0-panel').classList.toggle('active');
+//    document.querySelector('.player-1-panel').classList.toggle('active');
+//
+//    document.getElementById('dice-1').style.display = 'none';
+//    document.getElementById('dice-2').style.display = 'none';
+//}
+//
+//document.querySelector('.btn-new').addEventListener('click', init);
+//
+//function init() {
+//    scores = [0, 0];
+//    activePlayer = 0;
+//    roundScore = 0;
+//    gamePlaying = true;
+//
+//    document.getElementById('dice-1').style.display = 'none';
+//    document.getElementById('dice-2').style.display = 'none';
+//
+//    document.getElementById('score-0').textContent = '0';
+//    document.getElementById('score-1').textContent = '0';
+//    document.getElementById('current-0').textContent = '0';
+//    document.getElementById('current-1').textContent = '0';
+//    document.getElementById('name-0').textContent = 'Player 1';
+//    document.getElementById('name-1').textContent = 'Player 2';
+//    document.querySelector('.player-0-panel').classList.remove('winner');
+//    document.querySelector('.player-1-panel').classList.remove('winner');
+//    document.querySelector('.player-0-panel').classList.remove('active');
+//    document.querySelector('.player-1-panel').classList.remove('active');
+//    document.querySelector('.player-0-panel').classList.add('active');
+//}
+
+//document.querySelector('#current-' + activePlayer).textContent = dice;
+//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
+//var x = document.querySelector('#score-0').textContent;
+
+
+
+
+
+/*
+YOUR 3 CHALLENGES
+Change the game to follow these rules:
+
+1. A player looses his ENTIRE score when he rolls two 6 in a row. After that, it's the next player's turn. (Hint: Always save the previous dice roll in a separate variable)
+2. Add an input field to the HTML where players can set the winning score, so that they can change the predefined score of 100. (Hint: you can read that value with the .value property in JavaScript. This is a good oportunity to use google to figure this out :)
+3. Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
+*/
+
+///FUNCTIONS RETURNING FUNCTIONS//////////////////
+/*
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach, ' + name + '?');
+        }
+    } else {
+        return function(name) {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+var teacherQuestion = interviewQuestion('teacher');
+var designerQuestion = interviewQuestion('designer');
+
+
+teacherQuestion('John');
+designerQuestion('John');
+designerQuestion('jane');
+designerQuestion('Mark');
+designerQuestion('Mike');
+
+interviewQuestion('teacher')('Mark');
+
+///REWRITTEN USING CLOSURES////////////////////
+
+function interviewQuestion(job) {
+    return function(name) {
+        if (job === 'designer') {
+            console.log(name + ', can you please explain what UX design is?');
+        } else if (job === 'teacher') {
+            console.log('What subject do you teach, ' + name + '?');
+        } else {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+}
+
+interviewQuestion('teacher')('John');
+
+/////////////// CODING CHALLENGE/////////////////
+
+
+/*
+--- Let's build a fun quiz game in the console! ---
+
+1. Build a function constructor called Question to describe a question. A question should include:
+a) question itself
+b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
+c) correct answer (I would use a number for this)
+
+2. Create a couple of questions using the constructor
+
+3. Store them all inside an array
+
+4. Select one random question and log it on the console, together with the possible answers (each question should have a number) (Hint: write a method for the Question objects for this task).
+
+5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
+
+6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+
+7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
+*/
+
+//1. CREATE IIFE
+(function() {
+
+    //2. CREATE OBJECT PROTOTYPE
+    var quizQ = {
+        question: 'default',
+        choices: [],
+        rightA: 'default',
+        //7. INVOKED, 'this' POINTS TO PROPERTIES OF INSTANTIATED OBJs BELOW
+        askQ: function() {
+                console.log(this.question);
+                for (var i = 0; i < this.choices.length; i++) {
+                    console.log(i + ': ' + this.choices[i]);
+                }
+        },
+        //10. INVOKED, 'this' POINTS TO PROPERTIES OF INSTANTIATED OBJs BELOW
+        checkA: function(ans) {
+            if(ans === this.rightA){
+                console.log('Correct answer!');
             } else {
-                console.log('Person ' + i + ' is NOT of age at ' + ages[i] + ' years of age.');
-                cantServe.push('Person ' + i + ' ' + false);
+                console.log('Wrong answer. Try again.');
             }
-        };
-        console.log(canServe);
-        console.log(cantServe);
+        }
     };
-    
-    serviceDecider();
+
+    //3. INSTANTIATION
+    var q1 = Object.create(quizQ);
+    q1.question = "What was the name of Mikes first dog?";
+    q1.choices = ["Poop", "Rusty", "Fido"];
+    q1.rightA = 1;
+
+    var q2 = Object.create(quizQ);
+    q2.question = "What is Mike's favorite ice cream?";
+    q2.choices = ["Vanilla", "Raspberry", "Chocolate"];
+    q2.rightA = 2;
+
+    var q3 = Object.create(quizQ);
+    q3.question = "Where did Mike go to high school?";
+    q3.choices = ["Bishop Ahr", "NYC High", "Whatever school"];
+    q3.rightA = 0;
+
+    var q4 = Object.create(quizQ);
+    q4.question = "How many hours a day does Mike spend reading?";
+    q4.choices = ["One", "Two", "Three"];
+    q4.rightA = 1;
+
+    //4. STORE OBJs IN ARRAY
+    var allQs = [q1, q2, q3, q4];
+
+    //5. GENERATE RANDOM NUMBER BASED ON NUMBER OF Qs
+    var qNumber = Math.floor(Math.random() * allQs.length);
+
+    //6. INVOKE askQ METHOD FOR RANDOMLY CHOSEN QUESTION
+    allQs[qNumber].askQ();
+
+    //8. PROMPT USER FOR ANSWER; PARSE AS INTEGER
+    var finalAnswer = parseInt(prompt("Please enter your answer!"));
+
+    //9. INVOKE checkA METHOD FOR RANDOMLY CHOSEN QUESTION
+    allQs[qNumber].checkA(finalAnswer);
+
+//11. CALL IIFE
+})();
 
 </script>
 
