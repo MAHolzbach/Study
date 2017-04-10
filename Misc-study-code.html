@@ -289,11 +289,19 @@ c) correct answer (I would use a number for this)
 6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
 
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
+
+8. After you display the result, display the next random question, so that the game never ends (Hint: write a function for this and call it right after displaying the result)
+
+9. Be careful: after Task 8, the game literally never ends. So include the option to quit the game if the user writes 'exit' instead of the answer. In this case, DON'T call the function from task 8.
+
+10. Track the user's score to make the game more fun! So each time an answer is correct, add 1 point to the score (Hint: I'm going to use the power of closures for this, but you don't have to, just do this with the tools you feel more comfortable at this point).
+
+11. Display the score in the console. Use yet another method for this.
 */
 
 //1. CREATE IIFE
 (function() {
-
+    var score = 0;
     //2. CREATE OBJECT PROTOTYPE
     var quizQ = {
         question: 'default',
@@ -309,9 +317,17 @@ c) correct answer (I would use a number for this)
         //10. INVOKED, 'this' POINTS TO PROPERTIES OF INSTANTIATED OBJs BELOW
         checkA: function(ans) {
             if(ans === this.rightA){
+                score++;
                 console.log('Correct answer!');
+                console.log("Your current score is: " + score);
+                qAsker();
+            } else if (ans === 9) {
+                return;
             } else {
+                score--;
                 console.log('Wrong answer. Try again.');
+                console.log("Your current score is: " + score);
+                qAsker();
             }
         }
     };
@@ -339,18 +355,22 @@ c) correct answer (I would use a number for this)
 
     //4. STORE OBJs IN ARRAY
     var allQs = [q1, q2, q3, q4];
+    
+    var qAsker = function() {
+        //5. GENERATE RANDOM NUMBER BASED ON NUMBER OF Qs
+        var qNumber = Math.floor(Math.random() * allQs.length);
 
-    //5. GENERATE RANDOM NUMBER BASED ON NUMBER OF Qs
-    var qNumber = Math.floor(Math.random() * allQs.length);
+        //6. INVOKE askQ METHOD FOR RANDOMLY CHOSEN QUESTION
+        allQs[qNumber].askQ();
 
-    //6. INVOKE askQ METHOD FOR RANDOMLY CHOSEN QUESTION
-    allQs[qNumber].askQ();
+        //8. PROMPT USER FOR ANSWER; PARSE AS INTEGER
+        var finalAnswer = parseInt(prompt("Please enter your answer! Type 9 to quit."));
 
-    //8. PROMPT USER FOR ANSWER; PARSE AS INTEGER
-    var finalAnswer = parseInt(prompt("Please enter your answer!"));
-
-    //9. INVOKE checkA METHOD FOR RANDOMLY CHOSEN QUESTION
-    allQs[qNumber].checkA(finalAnswer);
+        //9. INVOKE checkA METHOD FOR RANDOMLY CHOSEN QUESTION
+        allQs[qNumber].checkA(finalAnswer);    
+    }
+    
+    qAsker();
 
 //11. CALL IIFE
 })();
