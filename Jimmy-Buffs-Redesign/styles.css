@@ -26,14 +26,19 @@ body, html {
   max-width: 660px;
   padding-top: 10px;
   opacity: 0.8;
+ }
+.navbar-nav {
+  width: 100%;
+  text-align: center;
 }
-.navbar .navbar-nav {
+.navbar-nav li {
+  float: none;
   display: inline-block;
-  float: left;
-  vertical-align: top;
 }
 .navbar .navbar-collapse {
+  float: left;
   text-align: center;
+  margin-left: 40px;
 }
 #navLinks a {
   color: black;
@@ -44,6 +49,25 @@ body, html {
 }
 .homePage {
   min-height: 100vh;
+}
+.homePage .col-md-2 .col-md-offset-2 {
+  min-height: 70vh;
+}
+.aboutPage .row .col-md-8 {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+.homePage h2, .aboutPage h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 3.5px;
+}
+.homePage h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3.5vh;
+}
+.homePage, .aboutPage p {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3.5vh;
 }
 .homePage img {
   margin-top: 10px;
