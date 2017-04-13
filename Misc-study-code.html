@@ -430,7 +430,7 @@ c) correct answer (I would use a number for this)
 //
 //    lookUpProfile("Mike", "likes");
 
-
+////////////SOME FREE CODE CAMP ALGORITHIMS////////////////
 
     //1. Re-order array so lower number comes first.
 
@@ -499,7 +499,77 @@ c) correct answer (I would use a number for this)
 // }
 // chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
+// function slasher(arr, howMany) {
+//   arr.splice(0, howMany);
+// console.log(arr);
+// }
+//
+// slasher([1, 2, 3], 2);
 
+// function mutation(arr) {
+//   var firstArray = arr[0].toLowerCase().split('');
+//   var secondArray = arr[1].toLowerCase().split('');
+//   // var thirdArray = [];
+//   var finalArray = [];
+//   // thirdArray.push(firstArray, secondArray);
+//
+//   for(var i = 0; i < firstArray.length; i++) {
+//     for(var j = 0; j < secondArray.length; j++) {
+//       if(firstArray[i].indexOf(secondArray[j] !== -1)) {
+//         console.log(true);
+//         finalArray.push(firstArray[i]);
+//       } else {
+//         console.log(false);
+//       }
+//     }
+//   }
+//
+//   // if(arr[0].indexOf(arr[1]) === true) {
+//   //   console.log(true);
+//   // } else {
+//   //   console.log(false);
+//   // }
+//   console.log(finalArray);
+//
+// }
+// mutation(["voodoo", "no"]);
+
+// function bouncer(arr) {
+//   return arr.filter(Boolean);
+// }
+//
+// bouncer([7, "ate", "", false, 9]);
+
+function destroyer(arr) {
+  var array = [...arguments];
+
+  console.log(array);
+}
+
+destroyer([1, 2, 3, 1, 2, 3, 1, 2, 3], 2, 3);
+
+// function getIndexToIns(arr, num) {
+//   arr.push(num);
+//   arr.sort(function(a, b) {
+//     return a - b;
+//   });
+//   // for(var i = 0; i < arr.length; i++) {
+//   //   if(arr[i] >= num) {
+//   //     console.log(arr.indexOf(arr[i]));
+//   //   } else {
+//   //
+//   //   }
+//   // }
+//   console.log(arr.indexOf(num));
+// }
+// getIndexToIns([40, 60, 20, 10, 5, 100], 50);
+
+function rot13(str) { // LBH QVQ VG!
+
+  return str;
+}
+
+rot13("SERR PBQR PNZC");
 
 </script>
 
