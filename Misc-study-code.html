@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Untitled Document</title>
+
 </head>
 
 <body>
-
     <p>...</p>
-
 </body>
 
 <script>
+
 //    var player = {
 //        name: 'Default',
 //        age: 'Default',
@@ -540,13 +540,21 @@ c) correct answer (I would use a number for this)
 //
 // bouncer([7, "ate", "", false, 9]);
 
-function destroyer(arr) {
-  var array = [...arguments];
-
-  console.log(array);
-}
-
-destroyer([1, 2, 3, 1, 2, 3, 1, 2, 3], 2, 3);
+// function destroyer(arr) {
+//   var array = [...arguments];
+//   var newArray = array.filter(function(){
+//     for(var i = 0; i < array[0].length; i++) {
+//       if(array[0].includes(array[i])) {
+//         console.log(true);
+//       } else {
+//         console.log(false);
+//       }
+//     }
+//   });
+//   console.log(array);
+// }
+//
+// destroyer([1, 2, 3, 1, 3], 2, 3);
 
 // function getIndexToIns(arr, num) {
 //   arr.push(num);
@@ -564,12 +572,32 @@ destroyer([1, 2, 3, 1, 2, 3, 1, 2, 3], 2, 3);
 // }
 // getIndexToIns([40, 60, 20, 10, 5, 100], 50);
 
-function rot13(str) { // LBH QVQ VG!
+// UTF-8 for cap letters: 65-90
+// function rot13(str) { // LBH QVQ VG!
+//   var messageArray = str.split('');
+//   var numberArray = [];
+//   var convertedNumberArray = [];
+//   for(var i = 0; i < messageArray.length; i++) {
+//     numberArray.push(messageArray[i].charCodeAt());
+//   };
+//   for(var j = 0; j < numberArray.length; j++) {
+//     if(numberArray[j] <= 77 && numberArray[j] > 64) {
+//       convertedNumberArray.push(numberArray[j] + 13);
+//     } else if(numberArray[j] > 77 && numberArray[j] < 91) {
+//       convertedNumberArray.push(numberArray[j] - 13);
+//     } else {
+//       convertedNumberArray.push(numberArray[j]);
+//     }
+//   };
+//   for(var k = 0; k < convertedNumberArray.length; k++) {
+//     var secretMessage = String.fromCharCode(...convertedNumberArray);
+//   }
+//   console.log(secretMessage);
+// }
+//
+// rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.");
 
-  return str;
-}
 
-rot13("SERR PBQR PNZC");
 
 </script>
 
