@@ -1,9 +1,25 @@
 $(document).ready(function() {
-  $('#getMessage').on('click', function(){
-    $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json", function(json) {
-      var quotation = json.quoteText;
-      var author = json.quoteAuthor;
+
+  var quotation;
+  var author;
+
+  function newQuote() {
+    $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function(json) {
+       quotation = json.quote;
+       author = json.author;
       $('.quote').html('"' + quotation + '"' + '</br>' + '-' + author);
     });
+  }
+
+  $('#getMessage').on('click', function(event) {
+    event.preventDefault();
+    newQuote();
+  });
+
+  newQuote();
+
+  $('.shareQuote').on('click', function(event){
+    event.preventDefault();
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(quotation + '-' +  author));
   });
 });
