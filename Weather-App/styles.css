@@ -1,0 +1,9 @@
+body {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+}
+#data {
+  color: white;
+  font-size: 5em;
+  font-weight: bold;
+}
