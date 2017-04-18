@@ -600,21 +600,21 @@ c) correct answer (I would use a number for this)
 //DIFF TWO ARRAYS
 //Boxed code works, but I dont know why.
 //Found: http://stackoverflow.com/questions/1187518/javascript-array-difference
-//////////////////////////////////////////////////
-// function diffArray(arr1, arr2) {             //
-//   var newArr1 = [];                          //
-//   var newArr2 = [];                          //
-//                                              //
-//   Array.prototype.diff = function(a) {       //
-//     return this.filter(function(i) {         //
-//       return a.indexOf(i) < 0;               //
-//     });                                      //
-//   };                                         //
-//   newArr1 = arr1.diff(arr2);                 //
-//   newArr2 = arr2.diff(arr1);                 //
-//   var lastArray = newArr1.concat(newArr2);   //
-//   console.log(lastArray);                    //
-//////////////////////////////////////////////////
+              //////////////////////////////////////////////////
+              // function diffArray(arr1, arr2) {             //
+              //   var newArr1 = [];                          //
+              //   var newArr2 = [];                          //
+              //                                              //
+              //   Array.prototype.diff = function(a) {       //
+              //     return this.filter(function(i) {         //
+              //       return a.indexOf(i) < 0;               //
+              //     });                                      //
+              //   };                                         //
+              //   newArr1 = arr1.diff(arr2);                 //
+              //   newArr2 = arr2.diff(arr1);                 //
+              //   var lastArray = newArr1.concat(newArr2);   //
+              //   console.log(lastArray);                    //
+              //////////////////////////////////////////////////
   // if (arr1.includes(arr2)) {
   //   console.log(true);
   // } else {
@@ -654,8 +654,29 @@ c) correct answer (I would use a number for this)
 //   return animal.species === 'dog';
 // });
 
+////////////Wherefore Art Thou/////////////////////////////////////
+// function whatIsInAName(collection, source) {                 ///
+//   var sourceString = Object.keys(source);//array of strings  ///
+//   for(var i = 0; i < collection.length; i++) {               ///
+//     if(collection[i].hasOwnProperty(sourceString)) {         ///
+//       console.log(collection[i]);                            ///
+//     }
+//   }
+// }
+//
+// whatIsInAName([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "c": 2 }); //should return [{ "a": 1, "b": 2, "c": 2 }]
 
-
+// function myReplace(str, before, after) {
+//   var newStr;
+//   if(/[A-Z]/.test(before.charAt(0))) {
+//     newStr = str.replace(before, after.charAt(0).toUpperCase() + after.slice(1));
+//   } else {
+//     newStr = str.replace(before, after);
+//   }
+//   return newStr;
+// }
+//
+// myReplace("Let us get back to more Coding", "Coding", "algorithms");//should return "He is Sitting on the couch"
 
 
 </script>
