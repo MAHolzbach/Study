@@ -430,6 +430,117 @@ c) correct answer (I would use a number for this)
 //
 //    lookUpProfile("Mike", "likes");
 
+/////////////////////////////////
+// CODING CHALLENGE
+
+/*
+
+Suppose that you're working in a small town administration, and you're in charge of two town elements:
+1. Parks
+2. Streets
+
+It's a very small town, so right now there are only 3 parks and 4 streets. All parks and streets have a name and a build year.
+
+At an end-of-year meeting, your boss wants a final report with the following:
+1. Tree density of each park in the town (forumla: number of trees/park area)
+2. Average age of each town's park (forumla: sum of all ages/number of parks)
+3. The name of the park that has more than 1000 trees
+4. Total and average length of the town's streets
+5. Size classification of all streets: tiny/small/normal/big/huge. If the size is unknown, the default is normal
+
+All the report data should be printed to the console.
+*/
+
+// var parkArray, streetArray;
+//
+// var bigPark = function() {
+//   for(var i = 0; i < parkArray.length; i++) {
+//     if (parkArray[i].treeCount > 1000) {
+//       return parkArray[i].name;
+//     }
+//   }
+// };
+//
+// var parkAvg = function() {
+//   var avg = 0;
+//   for(var i = 0; i < parkArray.length; i++) {
+//     avg += parkArray[i].age();
+//   }
+//   return avg;
+// };
+//
+// var park = {
+//   name: 'default',
+//   buildYear: 'default',
+//   area: 'default',
+//   treeCount: 'default',
+//   age: function() {
+//     var y = new Date();
+//     return y.getFullYear() - this.buildYear;
+//   },
+//   treeDensity: function() {
+//     return this.treeCount / this.area;
+//   }
+// }
+//
+// var parkA = Object.create(park);
+// parkA.name = 'ParkA';
+// parkA.buildYear = 1931;
+// parkA.area = 12;
+// parkA.treeCount = 500;
+//
+// var parkB = Object.create(park);
+// parkB.name = 'ParkB';
+// parkB.buildYear = 1965;
+// parkB.area = 18;
+// parkB.treeCount = 1500;
+//
+// var parkC = Object.create(park);
+// parkC.name = 'ParkC';
+// parkC.buildYear = 1901;
+// parkC.area = 6;
+// parkC.treeCount = 300;
+//
+// parkArray = [parkA, parkB, parkC];
+//
+// var street = {
+//   name: 'default',
+//   buildYear: 'default',
+//   length: 'default',
+//   size: 'default'
+// }
+//
+// var streetA = Object.create(street);
+// streetA.name = 'streetA';
+// streetA.buildYear = 1990;
+// streetA.length = 10;
+// streetA.size = 'big';
+//
+// var streetB = Object.create(street);
+// streetB.name = 'streetB';
+// streetB.buildYear = 1985;
+// streetB.length = 2;
+// streetB.size = 'small';
+//
+// var streetC = Object.create(street);
+// streetC.name = 'streetC';
+// streetC.buildYear = 1962;
+// streetC.length = 5;
+// streetC.size = 'normal';
+//
+// var streetD = Object.create(street);
+// streetD.name = 'streetD';
+// streetD.buildYear = 2000;
+// streetD.length = 20;
+// streetD.size = 'huge';
+//
+// streetArray = [streetA, streetB, streetC, streetD];
+//
+// parkAvg();
+
+
+/////////////////////////////////////////////////////////////
+
 ////////////SOME FREE CODE CAMP ALGORITHIMS////////////////
 
     //1. Re-order array so lower number comes first.
@@ -507,8 +618,8 @@ c) correct answer (I would use a number for this)
 // slasher([1, 2, 3], 2);
 
 // function mutation(arr) {
-//   var firstArray = arr[0].toLowerCase().split('');
-//   var secondArray = arr[1].toLowerCase().split('');
+//    \];V CXG56//   var firstArray = arr[0].().split('')
+//    +
 //   // var thirdArray = [];
 //   var finalArray = [];
 //   // thirdArray.push(firstArray, secondArray);
@@ -677,6 +788,18 @@ c) correct answer (I would use a number for this)
 // }
 //
 // myReplace("Let us get back to more Coding", "Coding", "algorithms");//should return "He is Sitting on the couch"
+
+function spinalCase(str) {
+  var newStr;
+  newStr = str.replace(/(\s+)|([_])/g, '-');
+  newStr = newStr.split(/(?=[A-Z])/).join('-');//This works for ("thisIsSpinalTap").
+  // newStr = newStr.toLowerCase();
+  // return newStr;
+
+  console.log(newStr);
+}
+
+spinalCase("AllThe-small Things");
 
 
 </script>
