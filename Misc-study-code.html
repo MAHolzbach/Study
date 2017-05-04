@@ -708,7 +708,8 @@ All the report data should be printed to the console.
 //
 // rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.");
 
-//DIFF TWO ARRAYS
+///////////DIFF TWO ARRAYS
+/////////////
 //Boxed code works, but I dont know why.
 //Found: http://stackoverflow.com/questions/1187518/javascript-array-difference
               //////////////////////////////////////////////////
@@ -789,17 +790,41 @@ All the report data should be printed to the console.
 //
 // myReplace("Let us get back to more Coding", "Coding", "algorithms");//should return "He is Sitting on the couch"
 
-function spinalCase(str) {
-  var newStr;
-  newStr = str.replace(/(\s+)|([_])/g, '-');
-  newStr = newStr.split(/(?=[A-Z])/).join('-');//This works for ("thisIsSpinalTap").
+/////////////SPINAL TAP CASE
+///////////////
+// function spinalCase(str) {
+//   var newStr;
+//   newStr = str.replace(/\s+|[_]/g, '-');
+  // newStr = str.split(/(?=[A-Z])/).join('-');//This works for ("thisIsSpinalTap").
   // newStr = newStr.toLowerCase();
   // return newStr;
 
+//   console.log(newStr);
+// }
+//
+// spinalCase("AllThe-small Things");
+
+// function booWho(bool) {
+//   if(bool === true){
+//     return true;
+//   } else if (bool === false){
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+//
+// booWho(null);
+
+//CONVERT HTML ENTITES
+function convertHTML(str) {
+  var a, b, c, d, e, newStr;
+  a = '&amp';
+  newStr = str.replace(/(&)/g, );
   console.log(newStr);
 }
 
-spinalCase("AllThe-small Things");
+convertHTML("Dolce & Gabbana");
 
 
 </script>
