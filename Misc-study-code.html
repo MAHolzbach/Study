@@ -817,14 +817,33 @@ All the report data should be printed to the console.
 // booWho(null);
 
 //CONVERT HTML ENTITES
-function convertHTML(str) {
-  var a, b, c, d, e, newStr;
-  a = '&amp';
-  newStr = str.replace(/(&)/g, );
-  console.log(newStr);
-}
+// function convertHTML(str) {
+//   var a, b, c, d, e, newStr;
+//   a = '&amp';
+//   newStr = str.replace(/(&)/g, );
+//   console.log(newStr);
+// }
+//
+// convertHTML("Dolce & Gabbana");
 
-convertHTML("Dolce & Gabbana");
+//PIG LATIN
+// function translatePigLatin(str) {
+//   let strArr = str.split('');
+//   if(strArr[0].match(/[aeiou]/)) {
+//     strArr.push('way');
+//   } else if (strArr[0] && strArr[1] !== /[aeiou]/) {
+    //problem is here. Need to identify everything before the first vowel, remove it and push to the end of the array. .charCodeAt()?
+  //   str.replace(/(\w+?)([aeiou]\w+)/i, '$2$1')
+  //   console.log(str);
+  // } else if (strArr[0] !== /[aeiou]/){
+  //   strArr.push(strArr.shift() + 'ay');
+  // }
+  // let finalStr = strArr.join('');
+  // return finalArr;
+  // console.log(strArr.indexOf(vowels));
+// }
+//
+// translatePigLatin("glove");
 
 
 </script>
