@@ -896,17 +896,51 @@ All the report data should be printed to the console.
 //     return num1 + num2;
 // }
 
-function adjacentElementsProduct(inputArray) {
-  var product = inputArray[0] * inputArray[1];
-  for(var i = 0; i < inputArray.length; i++) {
-    if((inputArray[i] * inputArray[i + 1]) > product) {
-      product = inputArray[i] * inputArray[i + 1];
+// function adjacentElementsProduct(inputArray) {
+//   var product = inputArray[0] * inputArray[1];
+//   for(var i = 0; i < inputArray.length; i++) {
+//     if((inputArray[i] * inputArray[i + 1]) > product) {
+//       product = inputArray[i] * inputArray[i + 1];
+//     }
+//   }
+//   console.log(product);
+// }
+//
+// adjacentElementsProduct([-23, 4, -3, 8, -12]);
+
+///////////////Diff Two Arrays///////////////
+
+var result1 = document.getElementById("result1");
+var result2 = document.getElementById("result2");
+var result3 = document.getElementById("result3");
+var result4 = document.getElementById("result4");
+var result5 = document.getElementById("result5");
+
+/*
+Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+*/
+
+function diffArray(arr1, arr2) {
+	var newArr = [];
+	var arr3 = arr1.concat(arr2);
+
+	function unique(item) {
+    if (arr1.indexOf(item) === -1 || arr2.indexOf(item) === -1) {
+      return item;
     }
   }
-  console.log(product);
+
+  newArr = arr3.filter(unique);
+
+  result1.innerHTML = arr1;
+  result2.innerHTML = arr2;
+  result3.innerHTML = arr3;
+  result4.innerHTML = newArr;
+  result5.innerHTML = arr1.indexOf(4);
+
 }
 
-adjacentElementsProduct([-23, 4, -3, 8, -12]);
+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 
 </script>
 
