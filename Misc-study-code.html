@@ -910,37 +910,75 @@ All the report data should be printed to the console.
 
 ///////////////Diff Two Arrays///////////////
 
-var result1 = document.getElementById("result1");
-var result2 = document.getElementById("result2");
-var result3 = document.getElementById("result3");
-var result4 = document.getElementById("result4");
-var result5 = document.getElementById("result5");
+// /*
+// Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+// */
+
+// function diffArray(arr1, arr2) {
+// 	var newArr = [];
+// 	var arr3 = arr1.concat(arr2);
+
+// 	function unique(item) {
+//     if (arr1.indexOf(item) === -1 || arr2.indexOf(item) === -1) {
+//       return item;
+//     }
+//   }
+
+//   newArr = arr3.filter(unique);
+
+//   result1.innerHTML = arr1;
+//   result2.innerHTML = arr2;
+//   result3.innerHTML = arr3;
+//   result4.innerHTML = newArr;
+//   result5.innerHTML = arr1.indexOf(4);
+
+// }
+
+// diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
+	
+///////////////Largest Number///////////////
 
 /*
-Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+Given an integer n, return the largest number that contains exactly n digits.
+
+Example
+
+For n = 2, the output should be
+largestNumber(n) = 99.
 */
 
-function diffArray(arr1, arr2) {
-	var newArr = [];
-	var arr3 = arr1.concat(arr2);
+// function largestNumber(n) {
+//   var num = [9];
+  
+//   for(var i = 1; i < n; i++) {
+//     num.push(9);
+//   }
+//   var a = num.join('');
+//   var b = parseInt(a);
+//   return b;
+// }
 
-	function unique(item) {
-    if (arr1.indexOf(item) === -1 || arr2.indexOf(item) === -1) {
-      return item;
-    }
-  }
+// largestNumber(5);
+	
+///////////////Candies///////////////
+	
+/*
+n children have got m pieces of candy. They want to eat as much candy as they can, but each child must eat exactly the same amount of candy as any other child. Determine how many pieces of candy will be eaten by all the children together. Individual pieces of candy cannot be split.
 
-  newArr = arr3.filter(unique);
+Example
 
-  result1.innerHTML = arr1;
-  result2.innerHTML = arr2;
-  result3.innerHTML = arr3;
-  result4.innerHTML = newArr;
-  result5.innerHTML = arr1.indexOf(4);
+For n = 3 and m = 10, the output should be
+candies(n, m) = 9.
 
+Each child will eat 3 pieces. So the answer is 9.
+*/
+
+function candies(n, m) {
+    var x = m % n;
+    var y = m - x;
+    return y;
 }
 
-diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
 
 </script>
 
