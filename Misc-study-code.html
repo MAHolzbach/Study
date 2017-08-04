@@ -1020,28 +1020,57 @@ String.fromCharCode()
 
 ////Just missing letter returned:
 
-function fearNotLetter(str) {
+// function fearNotLetter(str) {
   
-  let arr = [];
-  let arr2 = [];
-  let answer;
+//   let arr = [];
+//   let arr2 = [];
+//   let answer;
   
-  for(var i = 0; i < str.length; i++) {
-    arr.push(str.charCodeAt(i));
+//   for(var i = 0; i < str.length; i++) {
+//     arr.push(str.charCodeAt(i));
+//   }
+  
+//   arr.forEach(function(num, index, arr) {
+//     if(!isNaN(arr[index - 1]) && num !== arr[index - 1] + 1) {
+//       arr2.push(num - 1);
+//       answer = String.fromCharCode(...arr2);
+//     }
+//   });
+//   console.log(answer);
+// }
+
+// fearNotLetter("abce");
+
+// result1.innerHTML = innerArr;
+	
+/////////////////BooWho//////////////////////
+
+/*
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+Boolean Objects
+*/
+
+function booWho(bool) {
+  var answer;
+  
+  if(bool === null) {
+    answer = false;
+  } else if (bool.valueOf() === true || bool.valueOf() === false) {
+    answer = true;
+  } else {
+    answer = false;
   }
-  
-  arr.forEach(function(num, index, arr) {
-    if(!isNaN(arr[index - 1]) && num !== arr[index - 1] + 1) {
-      arr2.push(num - 1);
-      answer = String.fromCharCode(...arr2);
-    }
-  });
   console.log(answer);
 }
 
-fearNotLetter("abce");
-
-result1.innerHTML = innerArr;
+booWho(null);
 
 </script>
 
