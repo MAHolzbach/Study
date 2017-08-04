@@ -994,21 +994,49 @@ String.prototype.charCodeAt()
 String.fromCharCode()
 */
 
-var arr = [];
+////With whole string corrected and returned:
+
+// let arr = [];
+// let answer;
+
+// function fearNotLetter(str) {
+   
+//   for(var i = 0; i < str.length; i++) {
+//     arr.push(str.charCodeAt(i));
+//   }
+  
+//   arr.forEach(function(num, index, arr) {
+//     if(!isNaN(arr[index - 1]) && num !== arr[index - 1] + 1) {
+//       arr.splice(index, 0, arr[index - 1] + 1);
+//     } else {
+//       return undefined;
+//     }
+//   });
+  
+//   console.log(arr);
+  
+//   answer = String.fromCharCode(...arr);
+// }
+
+////Just missing letter returned:
 
 function fearNotLetter(str) {
-  var innerArr = [];
   
-  function numberGetter(str) {
-    for(var i = 0; i < str.length; i++) {
-    innerArr.push(str.charCodeAt(i));
-    }
-  return innerArr;
+  let arr = [];
+  let arr2 = [];
+  let answer;
+  
+  for(var i = 0; i < str.length; i++) {
+    arr.push(str.charCodeAt(i));
   }
   
-  
-  
-
+  arr.forEach(function(num, index, arr) {
+    if(!isNaN(arr[index - 1]) && num !== arr[index - 1] + 1) {
+      arr2.push(num - 1);
+      answer = String.fromCharCode(...arr2);
+    }
+  });
+  console.log(answer);
 }
 
 fearNotLetter("abce");
