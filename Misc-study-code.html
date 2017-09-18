@@ -1091,19 +1091,58 @@ Arguments object
 Array.prototype.reduce()
 */
 
-function uniteUnique(arr) {
-  var args = Array.from(arguments).reduce(function(a, b) {
-    return a.concat(b);
-  });
+// function uniteUnique(arr) {
+//   var args = Array.from(arguments).reduce(function(a, b) {
+//     return a.concat(b);
+//   });
 
-  var answer = args.filter(function(current, index, array) {
-    return array.indexOf(current) === index;
-  });
+//   var answer = args.filter(function(current, index, array) {
+//     return array.indexOf(current) === index;
+//   });
   
-  return answer;
+//   return answer;
+// }
+
+// uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
+	
+////////////////////////////////////////////////////DNA PAIRINGS////////////////////////////////////////
+	
+/*The DNA strand is missing the pairing element. Take each character, get its pair, and return the results as a 2d array.
+
+Base pairs are a pair of AT and CG. Match the missing element to the provided character.
+
+Return the provided character as the first element in each array.
+
+For example, for the input GCG, return [["G", "C"], ["C","G"],["G", "C"]]
+
+The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+Array.prototype.push()
+String.prototype.split()
+-----------------------------------------------------------------*/
+
+function pairElement(str) {
+  let strArray = str.split('');
+  let answerArray = [];
+  strArray.forEach(function(item) {
+    if(item === "G") {
+      answerArray.push([item, "C"]);
+    } else if (item === "C") {
+      answerArray.push([item, "G"])
+    } else if (item === "A") {
+      answerArray.push([item, "T"])
+    } else {
+      answerArray.push([item, "A"])
+    }
+  });
+  console.log(answerArray);
 }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
+pairElement("ATCGA");
 
 </script>
 
