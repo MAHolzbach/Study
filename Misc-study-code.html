@@ -1153,7 +1153,7 @@ Here are some helpful links:
 
 Array.prototype.filter()
 --------------------------------------------------------------------*/
-
+/*
 function findElement(arr, func) {
   var num = 0;
   let answer = arr.filter(func)[0];
@@ -1161,8 +1161,20 @@ function findElement(arr, func) {
 }
 
 findElement([1, 3, 5, 8, 9, 10], function(num){ return num % 2 === 0; }); 
+	
+-------------------------------------------------------------*/
+	
+filterFunction = () => {
+    let input, filter, table, tr, a, i, currentList, filteredList;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    table = document.getElementById("dd_table");
+    tr = table.getElementsByTagName('tr');
+	currentList = Array.from(tr);
 
-
+	filteredList = currentList.filter(row => {
+		row.innerText.toUpperCase().includes(filter) ? row.style.display = "" : row.style.display = "none";
+	})
 </script>
 
 </html>
