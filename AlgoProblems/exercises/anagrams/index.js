@@ -56,28 +56,49 @@
 //   return areEqual(stringAMap, stringBMap);
 // };
 
-const anagrams = (stringA, stringB) => {
-  const stringMapper = str => {
-    let stringObj = {};
+// const anagrams = (stringA, stringB) => {
+//   const stringMapper = str => {
+//     let stringObj = {};
 
-    for (let item of str.replace(/[^\w]/g, "").toLowerCase()) {
-      stringObj[item] = stringObj[item] + 1 || 1;
-    }
-    return stringObj;
+//     for (let item of str.replace(/[^\w]/g, "").toLowerCase()) {
+//       stringObj[item] = stringObj[item] + 1 || 1;
+//     }
+//     return stringObj;
+//   };
+
+//   let stringMapA = stringMapper(stringA);
+//   let stringMapB = stringMapper(stringB);
+
+//   if (Object.keys(stringMapA).length !== Object.keys(stringMapB).length) {
+//     return false;
+//   }
+
+//   for (let char in stringMapA) {
+//     if (stringMapA[char] !== stringMapB[char]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+
+const anagrams = (stringA, stringB) => {
+  const stringCleaner = str => {
+    return str
+      .replace(/[^\w]/g, "")
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("");
   };
 
-  let stringMapA = stringMapper(stringA);
-  let stringMapB = stringMapper(stringB);
+  let aString = stringCleaner(stringA);
+  let bString = stringCleaner(stringB);
 
-  if (Object.keys(stringMapA).length !== Object.keys(stringMapB).length) {
+  if (aString !== bString) {
+    console.log(false);
     return false;
   }
-
-  for (let char in stringMapA) {
-    if (stringMapA[char] !== stringMapB[char]) {
-      return false;
-    }
-  }
+  console.log(true);
+  return true;
 };
-
 module.exports = anagrams;
