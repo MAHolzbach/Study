@@ -91,14 +91,6 @@ const anagrams = (stringA, stringB) => {
       .join("");
   };
 
-  let aString = stringCleaner(stringA);
-  let bString = stringCleaner(stringB);
-
-  if (aString !== bString) {
-    console.log(false);
-    return false;
-  }
-  console.log(true);
-  return true;
+  return stringCleaner(stringA) === stringCleaner(stringB);
 };
 module.exports = anagrams;
