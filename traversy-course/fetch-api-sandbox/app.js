@@ -16,13 +16,12 @@ function getText() {
       console.log(err);
     });
 }
+
 //Get JSON data
 function getJSON() {
   let outputDiv = document.getElementById("output");
   fetch("posts.json")
-    .then(res => {
-      return res.json();
-    })
+    .then(res => res.json())
     .then(data => {
       let output = "";
       data.forEach(post => {
@@ -34,13 +33,12 @@ function getJSON() {
       console.log(err);
     });
 }
+
 //Get external data
 function getExternal() {
   let outputDiv = document.getElementById("output");
   fetch("https://api.github.com/users")
-    .then(res => {
-      return res.json();
-    })
+    .then(res => res.json())
     .then(data => {
       let output = "";
       data.forEach(user => {
