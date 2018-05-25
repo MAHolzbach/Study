@@ -61,6 +61,20 @@ const ItemCtrl = (function() {
     },
     getCurrentItem: () => {
       return data.currentItem;
+    },
+    updateItem: (name, calories) => {
+      calories = parseInt(calories);
+
+      let found = null;
+
+      data.items.forEach(item => {
+        if (item.id === data.currentItem.id) {
+          item.name = name;
+          item.calories = calories;
+          found = item;
+        }
+      });
+      return found;
     }
   };
 })();
@@ -75,7 +89,8 @@ const UICtrl = (function() {
     addBtn: '.add-btn',
     updateBtn: '.update-btn',
     deleteBtn: '.delete-btn',
-    backBtn: '.back-btn'
+    backBtn: '.back-btn',
+    listItems: '#item-list li'
   };
   return {
     populateItemList: items => {
@@ -151,6 +166,23 @@ const UICtrl = (function() {
         UISelectors.itemCaloriesInput
       ).value = ItemCtrl.getCurrentItem().calories;
       UICtrl.showEditState();
+    },
+    updateItem: item => {
+      let listItems = document.querySelectorAll(UISelectors.listItems);
+      listItems = Array.from(listItems);
+
+      listItems.forEach(listItem => {
+        let itemID = listItem.getAttribute('id');
+        if (itemID === `item-${item.id}`) {
+          document.querySelector(`#${itemID}`).innerHTML = `<strong>${
+            item.name
+          }</strong>
+				<em>${item.calories} Calories</em>
+				<a href="#" class="secondary-content">
+					<i class="edit-item fa fa-pencil-alt"></i>
+				</a>`;
+        }
+      });
     }
   };
 })();
@@ -164,8 +196,19 @@ const App = (function(ItemCtrl, UICtrl) {
       .querySelector(UISelectors.addBtn)
       .addEventListener('click', itemAddSubmit);
 
+    document.addEventListener('keypress', e => {
+      if (e.keyCode === 13 || e.which === 13) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
     document
       .querySelector(UISelectors.itemList)
+      .addEventListener('click', itemEditClick);
+
+    document
+      .querySelector(UISelectors.updateBtn)
       .addEventListener('click', itemUpdateSubmit);
   };
 
@@ -183,7 +226,7 @@ const App = (function(ItemCtrl, UICtrl) {
     }
   };
 
-  const itemUpdateSubmit = e => {
+  const itemEditClick = e => {
     e.preventDefault();
 
     if (e.target.classList.contains('edit-item')) {
@@ -195,6 +238,18 @@ const App = (function(ItemCtrl, UICtrl) {
       ItemCtrl.setCurrentItem(itemToEdit);
       UICtrl.addItemToForm();
     }
+  };
+
+  const itemUpdateSubmit = e => {
+    e.preventDefault();
+
+    let input = UICtrl.getItemInput();
+    const updatedItem = ItemCtrl.updateItem(input.name, input.calories);
+    const totalCalories = ItemCtrl.getTotalCalories();
+    UICtrl.showTotalCalories(totalCalories);
+
+    UICtrl.clearEditState();
+    UICtrl.updateItem(updatedItem);
   };
 
   return {
