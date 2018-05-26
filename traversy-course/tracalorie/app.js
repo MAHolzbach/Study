@@ -75,6 +75,17 @@ const ItemCtrl = (function() {
         }
       });
       return found;
+    },
+    deleteItem: id => {
+      const ids = data.items.map(item => {
+        return item.id;
+      });
+      const index = ids.indexOf(id);
+      data.items.splice(index, 1);
+    },
+    clearAllData: () => {
+      data.items = [];
+      data.totalCalories = 0;
     }
   };
 })();
@@ -90,7 +101,8 @@ const UICtrl = (function() {
     updateBtn: '.update-btn',
     deleteBtn: '.delete-btn',
     backBtn: '.back-btn',
-    listItems: '#item-list li'
+    listItems: '#item-list li',
+    clearBtn: '.clear-btn'
   };
   return {
     populateItemList: items => {
@@ -183,6 +195,14 @@ const UICtrl = (function() {
 				</a>`;
         }
       });
+    },
+    deleteListItem: id => {
+      const itemID = `#item-${id}`;
+      const item = document.querySelector(itemID);
+      item.remove();
+    },
+    clearAllListItems: () => {
+      document.querySelector(UISelectors.itemList).innerHTML = '';
     }
   };
 })();
@@ -210,6 +230,19 @@ const App = (function(ItemCtrl, UICtrl) {
     document
       .querySelector(UISelectors.updateBtn)
       .addEventListener('click', itemUpdateSubmit);
+
+    document.querySelector(UISelectors.backBtn).addEventListener('click', e => {
+      e.preventDefault();
+      UICtrl.clearEditState();
+    });
+
+    document
+      .querySelector(UISelectors.deleteBtn)
+      .addEventListener('click', itemDeleteSubmit);
+
+    document
+      .querySelector(UISelectors.clearBtn)
+      .addEventListener('click', clearAllItemsSubmit);
   };
 
   const itemAddSubmit = e => {
@@ -250,6 +283,29 @@ const App = (function(ItemCtrl, UICtrl) {
 
     UICtrl.clearEditState();
     UICtrl.updateItem(updatedItem);
+  };
+
+  const itemDeleteSubmit = e => {
+    e.preventDefault();
+
+    const currentItem = ItemCtrl.getCurrentItem();
+    ItemCtrl.deleteItem(currentItem.id);
+
+    UICtrl.deleteListItem(currentItem.id);
+
+    const totalCalories = ItemCtrl.getTotalCalories();
+    UICtrl.showTotalCalories(totalCalories);
+
+    UICtrl.clearEditState();
+  };
+
+  const clearAllItemsSubmit = e => {
+    e.preventDefault();
+
+    ItemCtrl.clearAllData();
+    UICtrl.clearAllListItems();
+    UICtrl.hideList();
+    UICtrl.showTotalCalories(ItemCtrl.getTotalCalories());
   };
 
   return {
