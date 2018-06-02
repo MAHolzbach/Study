@@ -7,12 +7,14 @@
     "dev":
       "webpack-dev-server --config webpack.config.babel.js --mode development",
     "build":
-      "rimraf dist && webpack --mode production --config webpack.config.babel.js"
+      "rimraf dist && webpack --mode production --config webpack.config.babel.js",
+    "json-server": "json-server --watch api/db.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "json-server": "^0.13.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0"
   },

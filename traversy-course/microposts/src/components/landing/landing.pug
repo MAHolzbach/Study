@@ -1,1 +1,27 @@
-h1 Landing page
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="https://bootswatch.com/4/cosmo/bootstrap.min.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.0.13/css/all.css")
+    title Microposts
+  body
+    nav.navbar.navbar-dark.bg-primary.mb-3
+      .container
+        a.navbar-brand(href="#") MicroPosts
+    .container.posts-container
+      .card.card-body.card-form
+        h1 Say something...
+        p.lead What's on your mind?
+        .form-group
+          input(type="text" placeholder='Post Title')#title.form-control
+        .form-group
+          textarea(placeholder='Post Body')#body.form-control
+        input(type="hidden" value='')#id
+        button.post-submit.btn.btn-primary.btn-block Post it!
+        span.form-end
+      br
+      div#posts
+    footer.mt-5.p-3.text-center.bg-light Microposts &copy
