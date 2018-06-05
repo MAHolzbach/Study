@@ -9,15 +9,15 @@ html(lang="en")
     title Microposts
   body
     nav.navbar.navbar-dark.bg-primary.mb-3
-      .container
+      div.container
         a.navbar-brand(href="#") MicroPosts
-    .container.posts-container
-      .card.card-body.card-form
+    div.container.posts-container
+      div.card.card-body.card-form
         h1 Say something...
         p.lead What's on your mind?
-        .form-group
+        div.form-group
           input(type="text" placeholder='Post Title')#title.form-control
-        .form-group
+        div.form-group
           textarea(placeholder='Post Body')#body.form-control
         input(type="hidden" value='')#id
         button.post-submit.btn.btn-primary.btn-block Post it!
