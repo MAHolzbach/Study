@@ -30,16 +30,35 @@ class UI {
     });
     this.post.innerHTML = output;
   };
-  showAlert = (msg, styleClasses) => {
-    let alertCard = '';
-  };
-  clearAlert = () => {};
-  clearFields = () => {
-    const title = document.querySelector('#title');
-    const body = document.querySelector('#body');
+  showAlert = (msg, className) => {
+    this.clearAlert();
 
-    title.value = '';
-    body.value = '';
+    const div = document.createElement('div');
+    div.className = className;
+    div.appendChild(document.createTextNode(msg));
+    const container = document.querySelector('.posts-container');
+    const posts = document.querySelector('#posts');
+    container.insertBefore(div, posts);
+
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  };
+  clearAlert = () => {
+    const currentAlert = document.querySelector('.alert');
+
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  };
+  clearFields = () => {
+    this.titleInput.value = '';
+    this.bodyInput.value = '';
+  };
+  fillForm = data => {
+    this.titleInput.value = data.title;
+    this.bodyInput.value = data.body;
+    this.idInput.value = data.id;
   };
 }
 
@@ -71,5 +90,21 @@ const submitPost = () => {
     .catch(err => console.log(err));
 };
 
+const enableEdit = e => {
+  e.preventDefault();
+
+  if (e.target.parentElement.classList.contains('edit')) {
+    const id = e.target.parentElement.dataset.id;
+    const title =
+      e.target.parentElement.previousElementSibling.previousElementSibling
+        .textContent;
+    const body = e.target.parentElement.previousElementSibling.textContent;
+    const data = { id, title, body };
+
+    ui.fillForm(data);
+  }
+};
+
 document.addEventListener('DOMContentLoaded', getPosts);
 document.querySelector('.post-submit').addEventListener('click', submitPost);
+document.querySelector('#posts').addEventListener('click', enableEdit);
