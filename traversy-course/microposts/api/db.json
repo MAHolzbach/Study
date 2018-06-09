@@ -16,8 +16,8 @@
       "id": 3
     },
     {
-      "title": "4",
-      "body": "",
+      "title": "This is post four",
+      "body": "This is post four!",
       "id": 4
     },
     {
@@ -49,6 +49,11 @@
       "title": "",
       "body": "10",
       "id": 10
+    },
+    {
+      "title": "11",
+      "body": "",
+      "id": 11
     }
   ]
 }
